@@ -1,10 +1,10 @@
 package main
 
 import (
-	"circuits/ed25519/core"
 	goEd25519 "crypto/ed25519"
 	"crypto/sha512"
 	"encoding/hex"
+	"fabric/ed25519/core"
 	"math/big"
 
 	"gadgets/ed25519"
@@ -96,9 +96,9 @@ func main() {
 	witness, _ := frontend.NewWitness(assignment, ecc.BN254.ScalarField())
 	publicWitness, _ := witness.Public()
 
-	proof, err := groth16.Prove(ccs, pk, witness)
+	proof, _ := groth16.Prove(ccs, pk, witness)
 
-	err = groth16.Verify(proof, vk, publicWitness)
+	err := groth16.Verify(proof, vk, publicWitness)
 
 	log.Err(err)
 

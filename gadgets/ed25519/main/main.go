@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"math/big"
 
+	ed25519 "gadgets/ed25519"
 	ed25519test "gadgets/ed25519/test"
-	ed25519 "gadgets/signature/ed25519"
 
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/backend/groth16"
@@ -31,10 +31,10 @@ func (c *Ed25519Circuit) Define(api frontend.API) error {
 }
 
 func main() {
-	pub, priv, err := goEd25519.GenerateKey(nil)
+	pub, priv, _ := goEd25519.GenerateKey(nil)
 	fmt.Printf("pub:%x\n", pub)
 
-	A, err := (&ed25519test.Point{}).SetBytes(pub)
+	A, _ := (&ed25519test.Point{}).SetBytes(pub)
 	_A := (&ed25519test.Point{}).Negate(A)
 
 	msg := getInputData()
@@ -85,16 +85,16 @@ func main() {
 
 	assigment.Message = msgFv
 
-	ccs, err := frontend.Compile(ecc.BN254.ScalarField(), r1cs.NewBuilder, &Ed25519Circuit{})
+	ccs, _ := frontend.Compile(ecc.BN254.ScalarField(), r1cs.NewBuilder, &Ed25519Circuit{})
 
 	pk, vk, _ := groth16.Setup(ccs)
 
-	witness, err := frontend.NewWitness(assigment, ecc.BN254.ScalarField())
+	witness, _ := frontend.NewWitness(assigment, ecc.BN254.ScalarField())
 
-	proof, err := groth16.Prove(ccs, pk, witness)
+	proof, _ := groth16.Prove(ccs, pk, witness)
 
 	publicWitness, _ := witness.Public()
-	err = groth16.Verify(proof, vk, publicWitness)
+	err := groth16.Verify(proof, vk, publicWitness)
 
 	log.Err(err)
 
