@@ -47,15 +47,10 @@ func (c *BlsSignatureVerifyCircuit) Define(api frontend.API) error {
 	api.AssertIsEqual(c.ParticipantNum, participantNum)
 
 	// 2. Verify sig
-	// var signingRootG2 pairing_bls12381.G2Affine
-	// TODO: invoke paring_bls12381.hashToG2(circuit.SigningRoot) with domain separation tag
-
-	// paring check
 	paring, err := pairing_bls12381.NewPairing(api)
 	if err != nil {
 		return err
 	}
-
 	signingRootG2 := pairing_bls12381.HashToG2(api, c.SigningRoot)
 	// fast ate pairing by check e(-G1, S) * e(PK, H) == 1
 	res, err := paring.Pair([]*pairing_bls12381.G1Affine{&G1GenNeg, aggPubKey}, []*pairing_bls12381.G2Affine{&c.AggSig, signingRootG2})
