@@ -344,7 +344,7 @@ func CheckMPTInclusionNoBranchTermination(
 		if layer == maxDepth-2 {
 			nodeRefLength = api.Mul(depthEqual[layer+1], 64)
 			for i := 0; i < 64; i++ {
-				nodeRefs = append(nodeRefs, api.Mul(depthEqual[layer+1], 64))
+				nodeRefs = append(nodeRefs, api.Mul(depthEqual[layer+1], leafHash[i]))
 			}
 		} else {
 			nodeRefLength = api.Add(api.Mul(depthEqual[layer+1], api.Sub(64, nodeHashes[layer+1].OutputLength)), nodeHashes[layer+1].OutputLength)
