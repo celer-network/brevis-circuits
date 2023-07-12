@@ -5,7 +5,7 @@ import (
 	gosha256 "crypto/sha256"
 	"math/big"
 
-	"gadgets/pairing_bls12381"
+	"github.com/celer-network/brevis-circuits/gadgets/pairing_bls12381"
 
 	bls12381 "github.com/consensys/gnark-crypto/ecc/bls12-381"
 	"github.com/consensys/gnark/frontend"

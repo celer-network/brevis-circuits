@@ -1,7 +1,7 @@
 package ed25519
 
 import (
-	edwards25519 "gadgets/ed25519/test"
+	edwards25519 "github.com/celer-network/brevis-circuits/gadgets/ed25519/test"
 
 	"github.com/consensys/gnark/frontend"
 	"github.com/consensys/gnark/std/math/emulated"

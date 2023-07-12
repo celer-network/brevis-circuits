@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"math/big"
 
-	ed25519 "gadgets/ed25519"
-	ed25519test "gadgets/ed25519/test"
+	ed25519 "github.com/celer-network/brevis-circuits/gadgets/ed25519"
+	ed25519test "github.com/celer-network/brevis-circuits/gadgets/ed25519/test"
 
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/backend/groth16"

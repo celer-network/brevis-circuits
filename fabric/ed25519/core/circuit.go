@@ -1,7 +1,7 @@
 package core
 
 import (
-	edd25519 "gadgets/ed25519"
+	edd25519 "github.com/celer-network/brevis-circuits/gadgets/ed25519"
 
 	"github.com/consensys/gnark/frontend"
 )

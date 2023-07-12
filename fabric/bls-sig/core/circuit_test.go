@@ -1,11 +1,10 @@
 package core
 
 import (
-	"fabric/common"
 	"testing"
 
-	"gadgets/pairing_bls12381"
-
+	"github.com/celer-network/brevis-circuits/fabric/common"
+	"github.com/celer-network/brevis-circuits/gadgets/pairing_bls12381"
 	"github.com/consensys/gnark-crypto/ecc"
 	bls12381 "github.com/consensys/gnark-crypto/ecc/bls12-381"
 	"github.com/consensys/gnark/frontend"

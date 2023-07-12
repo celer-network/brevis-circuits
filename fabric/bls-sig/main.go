@@ -7,10 +7,9 @@ import (
 	"runtime/debug"
 	"time"
 
-	"fabric/bls-sig/core"
-	"fabric/common"
-	"gadgets/pairing_bls12381"
-
+	"github.com/celer-network/brevis-circuits/fabric/bls-sig/core"
+	"github.com/celer-network/brevis-circuits/fabric/common"
+	"github.com/celer-network/brevis-circuits/gadgets/pairing_bls12381"
 	"github.com/consensys/gnark-crypto/ecc"
 	bls12381 "github.com/consensys/gnark-crypto/ecc/bls12-381"
 	"github.com/consensys/gnark/backend/groth16"

@@ -4,12 +4,13 @@ import (
 	goEd25519 "crypto/ed25519"
 	"crypto/sha512"
 	"encoding/hex"
-	ed25519test "gadgets/ed25519/test"
 	"math/big"
 	"strings"
 	"testing"
 
-	"gadgets/ed25519"
+	ed25519test "github.com/celer-network/brevis-circuits/gadgets/ed25519/test"
+
+	"github.com/celer-network/brevis-circuits/gadgets/ed25519"
 
 	"github.com/celer-network/goutils/log"
 	"github.com/consensys/gnark-crypto/ecc"

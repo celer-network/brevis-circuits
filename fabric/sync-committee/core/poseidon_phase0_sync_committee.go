@@ -1,7 +1,7 @@
 package core
 
 import (
-	"fabric/common"
+	"github.com/celer-network/brevis-circuits/fabric/common"
 
 	"github.com/consensys/gnark/frontend"
 	poseidon "github.com/liyue201/gnark-circomlib/circuits"

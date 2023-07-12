@@ -1,9 +1,9 @@
 package core
 
 import (
-	"fabric/common"
+	"github.com/celer-network/brevis-circuits/fabric/common"
 
-	"gadgets/sha256"
+	"github.com/celer-network/brevis-circuits/gadgets/sha256"
 
 	"github.com/consensys/gnark/frontend"
 )

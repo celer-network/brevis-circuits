@@ -6,7 +6,8 @@ package edwards25519
 
 import (
 	"errors"
-	"gadgets/ed25519/test/field"
+
+	"github.com/celer-network/brevis-circuits/gadgets/ed25519/test/field"
 )
 
 // Point types.

@@ -4,11 +4,12 @@ import (
 	goEd25519 "crypto/ed25519"
 	"crypto/sha512"
 	"encoding/hex"
-	"fabric/ed25519/core"
 	"math/big"
 
-	"gadgets/ed25519"
-	ed25519test "gadgets/ed25519/test"
+	"github.com/celer-network/brevis-circuits/fabric/ed25519/core"
+
+	"github.com/celer-network/brevis-circuits/gadgets/ed25519"
+	ed25519test "github.com/celer-network/brevis-circuits/gadgets/ed25519/test"
 
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/consensys/gnark/backend/groth16"
