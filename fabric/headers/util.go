@@ -38,7 +38,7 @@ func NewChunkProofCircuit(count int) *Circuit {
 		PrevHash:      prevHash,
 		EndHash:       endHash,
 		StartBlockNum: 1,
-		EndBlockNum:   4,
+		EndBlockNum:   count,
 		HashRoundIdxs: roundIdxs,
 	}
 }
